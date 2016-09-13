@@ -1,2 +1,4 @@
 *
 !public/**
+!production/**
+production/client_secret.json.copy
