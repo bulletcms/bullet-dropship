@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:edge
 
 MAINTAINER Kevin Wang <wangkevin448@gmail.com>
 
@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY production/package.json ./
 
-RUN apk add --no-cache nodejs && apk -vv info && npm install
+RUN apk add --no-cache libc6-compat nodejs && apk -vv info && npm set progress=false && npm install
 
 COPY public public
 
