@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const extractCss = new ExtractTextPlugin('style[name].css', {allChunks: false});
+const extractSass = new ExtractTextPlugin('style[name].css', {allChunks: false});
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -12,14 +12,13 @@ module.exports = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: '[name].js',
-    libraryTarget: 'commonjs2'
+    filename: '[name].js'
   },
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.css$/, loader: extractCss.extract(['css']) }
+      { test: /\.scss$/, loader: extractSass.extract(['css','sass']) }
     ]
   },
   resolve: {
@@ -32,6 +31,6 @@ module.exports = {
     extensions: ['', '.js']
   },
   plugins: [
-    extractCss
+    extractSass
   ]
 };
