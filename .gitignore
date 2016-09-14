@@ -2,3 +2,4 @@ node_modules
 npm-debug.log
 webserver/public
 client_secret.json
+service_account_key.json
