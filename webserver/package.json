@@ -10,8 +10,8 @@
   "license": "MPL-2.0",
   "private": true,
   "dependencies": {
-    "bullet-sabot": "^0.1.6",
-    "bullet-tracer": "^0.1.4"
+    "bullet-sabot": "^0.1.8",
+    "bullet-tracer": "^0.1.6"
   },
   "devDependencies": {}
 }
